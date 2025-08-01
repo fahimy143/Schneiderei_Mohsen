@@ -1,13 +1,17 @@
+"homepage": "https://fahimy143.github.io/Schneiderei_Mohsen",
+
 {
   "name": "tailoring-site",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.5",
     "vite": "^7.0.6"
