@@ -1,15 +1,16 @@
-"homepage": "https://fahimy143.github.io/Schneiderei_Mohsen",
-
 {
   "name": "tailoring-site",
   "version": "0.0.1",
+  "homepage": "https://fahimy143.github.io/Schneiderei_Mohsen/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "vite build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.14",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.21",
@@ -19,6 +20,20 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.7.1",
+    "react-scripts": "^0.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
