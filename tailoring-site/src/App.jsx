@@ -1,11 +1,24 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Slideshow from "./components/Slideshow";
+import ServicesPrices from "./components/ServicesPrices";
+import AboutUs from "./components/AboutUs";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div className="text-center p-4">
-      <h1 className="text-3xl font-bold underline">
-        Tailoring Website Coming Soon!
-      </h1>
-    </div>
+    <>
+      <Navbar />
+      <main className="pt-0">
+        <Slideshow />
+        <ServicesPrices />
+        <AboutUs />
+        <Contact />
+        <Footer />
+        {/* Other sections */}
+      </main>
+    </>
   );
 }
 
