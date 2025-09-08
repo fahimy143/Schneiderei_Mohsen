@@ -1,55 +1,96 @@
 import React from "react";
 
-import pantsBg from "../assets/pants-bg.jpg";
-import dressBg from "../assets/dress-bg.jpg";
-import shirtBg from "../assets/shirt-bg.jpg";
-import skirtBg from "../assets/skirt-bg.jpg";
-
 const servicesData = [
   {
     category: "Hose",
-    bgImage: pantsBg,
     items: [
-      { service: "Hose kürzen", price: "Ab 9 €" },
-      { service: "Bund enger oder weiter", price: "Ab 13 €" },
-      { service: "Jeans Hose Bund enger", price: "Ab 15 €" },
-      { service: "Hosenbein enger", price: "Ab 12 €" },
-      { service: "Zippverschluss erneuern", price: "Ab 12 €" },
-      { service: "Skihose/Trainingshose", price: "Ab 20 €" },
+      { service: "Hose kürzen", price: "Ab 15 €" },
+      { service: "Bund enger oder weiter", price: "Ab 20 €" },
+      { service: "Jeans Hose Bund enger", price: "Ab 20 €" },
+      { service: "Hosenbein enger", price: "Ab 15 €" },
+      { service: "Zippverschluss erneuern", price: "Ab 20 €" },
+      { service: "Skihose/Trainingshose", price: "Ab 25 €" },
     ],
   },
   {
     category: "Kleid",
-    bgImage: dressBg,
     items: [
-      { service: "Kleid/Abendkleid kürzen", price: "Ab 17€/20 €" },
-      { service: "Zipp erneuern", price: "Ab 20 €" },
-      { service: "Taillieren", price: "Ab 20 €" },
-      { service: "Brautkleid kürzen", price: "Ab 45 €" },
-      { service: "Brautkleid enger/weiter", price: "Ab 60 €" },
+      { service: "Kleid/Abendkleid kürzen", price: "Ab 25€/55 €" },
+      { service: "Reißverschluss erneuern", price: "Ab 30 €" },
+      { service: "Taillieren", price: "Ab 30 €" },
     ],
   },
   {
     category: "Hemd",
-    bgImage: shirtBg,
     items: [
-      { service: "Ärmellänge kürzen normal", price: "Ab 10 €" },
+      { service: "Ärmellänge kürzen normal", price: "Ab 15 €" },
       {
         service: "Ärmellänge kürzen mit Schlitzverlängerung",
-        price: "Ab 15 €",
+        price: "Ab 20 €",
       },
-      { service: "Enger", price: "Ab 15 €" },
+      { service: "Enger machen", price: "Ab 20 €" },
     ],
   },
   {
     category: "Rock",
-    bgImage: skirtBg,
     items: [
-      { service: "Rocklänge kürzen", price: "Ab 15 €" },
-      { service: "Zippverschluss erneuern", price: "Ab 12 €" },
-      { service: "Rock enger machen", price: "Ab 15 €" },
-      { service: "Rockfutter ansetzen", price: "Ab 30 €" },
+      { service: "Rocklänge kürzen", price: "Ab 20 €" },
+      { service: "Reißverschluss erneuern", price: "Ab 20 €" },
+      { service: "Rock enger machen", price: "Ab 25 €" },
+      { service: "Rockfutter einsetzen", price: "Ab 45 €" },
     ],
+  },
+  {
+    category: "Brautkleid",
+    items: [
+      { service: "Länge kürzen", price: "Ab 90 €" },
+      { service: "Taillieren / Weiten oder Engen", price: "Ab 80 €" },
+    ],
+  },
+  {
+    category: "Leder",
+    items: [
+      { service: "Reißverschluss erneuern", price: "Ab 70 €" },
+      { service: "Lederjacke enger machen", price: "Ab 60 €" },
+      { service: "Lederhose enger machen", price: "Ab 45 €" },
+    ],
+  },
+  {
+    category: "Anzughose",
+    items: [
+      { service: "Ärmel kürzen", price: "Ab 35 €" },
+      { service: "Enger machen", price: "Ab 45 €" },
+      { service: "Neue Naht / Anpassung", price: "Ab 90 €" },
+    ],
+  },
+  {
+    category: "Rucksack",
+    items: [
+      { service: "Reißverschluss reparieren", price: "Ab 90 €" },
+      { service: "Rückseite Reißverschluss reparieren", price: "Ab 90 €" },
+    ],
+  },
+  {
+    category: "Sonnenschutz",
+    items: [{ service: "Vollständiger Service / Alle Reparaturen" }],
+  },
+  {
+    category: "Traditionelle Artikel",
+    items: [
+      { service: "Enger oder weiter machen", price: "Ab 35 €" },
+      { service: "Kürzen", price: "Ab 35 €" },
+    ],
+  },
+  {
+    category: "Motorradjacke",
+    items: [
+      { service: "Reißverschluss erneuern", price: "Ab 75 €" },
+      { service: "Hosenreißverschluss reparieren", price: "Ab 35 €" },
+    ],
+  },
+  {
+    category: "Vorhang",
+    items: [{ service: "Länge anpassen / Kürzen", price: "Ab 15 €" }],
   },
 ];
 
@@ -62,40 +103,39 @@ export default function ServicesPrices() {
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
         Leistungen & Preise
       </h2>
-      <div className="grid gap-12 md:grid-cols-2">
-        {servicesData.map(({ category, bgImage, items }) => (
+      <div className="grid gap-8 md:grid-cols-2">
+        {servicesData.map(({ category, items }) => (
           <div
             key={category}
-            className="relative rounded-lg overflow-hidden shadow-lg text-white"
+            className="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            {/* Background Image with blur */}
-            <img
-              src={bgImage}
-              alt={`${category} background`}
-              className="absolute inset-0 w-full h-full object-cover filter blur-sm scale-110"
-              loading="lazy"
-            />
-
-            {/* Overlay to darken for text contrast */}
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
-            {/* Content */}
-            <div className="relative p-8">
-              <h3 className="text-3xl font-semibold mb-6">{category}</h3>
-              <ul className="space-y-3">
-                {items.map(({ service, price }, idx) => (
-                  <li
-                    key={idx}
-                    className="flex justify-between text-lg font-medium border-b border-white border-opacity-30 pb-2"
-                  >
-                    <span>{service}</span>
-                    <span>{price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+              {category}
+            </h3>
+            <ul className="space-y-3">
+              {items.map(({ service, price }, idx) => (
+                <li
+                  key={idx}
+                  className="flex justify-between text-gray-700 border-b border-gray-200 pb-2"
+                >
+                  <span>{service}</span>
+                  <span className="font-medium">{price}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
+      </div>
+
+      {/* Announcement Section */}
+      <div className="mt-12 bg-gray-100 rounded-xl p-6 text-center shadow-md">
+        <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+          Teppiche, Kleidung und mehr waschen
+        </h3>
+        <p className="text-gray-700 text-lg">
+          Wir bieten professionelles Waschen von Teppichen, Kleidung und
+          weiteren Artikeln an.
+        </p>
       </div>
     </section>
   );

@@ -31,8 +31,12 @@ const Footer = () => {
               <span>+43 662 434090</span>
             </li>
             <li className="flex items-center gap-2">
+              <FaPhoneAlt className="text-indigo-400" />
+              <span>+43 664 5596797</span>
+            </li>
+            <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-indigo-400" />
-              <span>Schneiderei Mustafa, Kleßheimer Allee 29a</span>
+              <span>Schneiderei Mohsen, Kleßheimer Allee 29a</span>
             </li>
           </ul>
         </div>
