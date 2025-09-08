@@ -34,7 +34,7 @@ export default function Slideshow() {
 
         {/* Welcome message overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          <h1 className="text-white text-3xl sm:text-5xl font-bold bg-black bg-opacity-50 px-6 py-3 rounded mb-4">
+          <h1 className="text-white text-2xl sm:text-5xl font-bold bg-black bg-opacity-50 px-6 py-3 rounded mb-4">
             Willkommen bei SCHNEIDEREI und ÄNDERUNG SCHNEIDEREI MOHSEN
           </h1>
           <p className="text-white text-sm sm:text-lg bg-black bg-opacity-40 px-4 py-2 rounded max-w-3xl">

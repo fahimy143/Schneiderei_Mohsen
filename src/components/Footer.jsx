@@ -64,14 +64,6 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition"
-            >
-              <FaGithub />
-            </a>
-            <a
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
